@@ -40,6 +40,18 @@ namespace pxsim.turtle {
     }
 }
 
+namespace pxsim.k12cer {
+    /**
+     * Maps a range of values to another range
+     */
+    //% weight=100
+    //% blockId=mapBlk block="go from %o1 = number| to %o2 = number| as %inVal = number| goes from %i1 = number| to %i2 = number"
+    export function mapBlk(o1 : number, o2 : number, inVal: number, i1 : number, i2: number) {
+	let slope = 1.0 * (o2 - o1) / (i2 - i1);
+	return o1 + (slope * (inVal - i1));
+    }
+}
+
 namespace pxsim.loops {
 
     /**
